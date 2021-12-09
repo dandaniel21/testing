@@ -1,3 +1,16 @@
+const fadeContact = document.getElementsByClassName("contact-container")[0];
+const observerContact = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+
+    if (entry.isIntersecting) {
+    fadeContact.classList.add("transition");
+    return;
+    }
+    });
+},
+);
+observerContact.observe(fadeContact);
+
 function validateForm() {
       let classVal = document.getElementsByClassName("val");
       let engine = (idVal, index, message) => {

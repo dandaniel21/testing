@@ -1,3 +1,21 @@
+const fadeAboutImage = document.getElementsByClassName("about-image")[0];
+const fadeAboutTable = document.getElementsByClassName("about-table")[0];
+const fadeAboutLorem = document.getElementsByClassName("about-lorem")[0];
+const aboutContainer = document.getElementsByClassName("about-container")[0];
+const observerAbout = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+
+    if (entry.isIntersecting) {
+    fadeAboutImage.classList.add("transition");  
+    fadeAboutTable.classList.add("transition");
+    fadeAboutLorem.classList.add("lorem-transition");
+    return;
+    }
+    });
+},
+);
+observerAbout.observe(aboutContainer);
+
 const fadeLogo = document.getElementsByClassName("skill-logo")[0];
 const observerLogo = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

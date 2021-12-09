@@ -17,8 +17,6 @@ function setMenuOpen() {
 }
 
 function validateForm() {
-  document.getElementById("form").addEventListener("submit", (e) => {
-    e.preventDefault();
     let classVal = document.getElementsByClassName("val");
     let engine = (idVal, index, message) => {
       if(document.getElementById(idVal).value == '') {
@@ -32,6 +30,6 @@ function validateForm() {
     engine("email", 0, "*Please input your Email");
     engine("subject", 1, "*Please input your Subject");
     engine("message", 2, "*Please input your Messages");
-  });
+    return false
 }
   

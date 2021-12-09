@@ -19,5 +19,16 @@ const observerNav = new IntersectionObserver((entries) => {
 );
 observerNav.observe(inFooter);
 
+const fadeHome = document.getElementsByClassName("home-container")[0];
+const observerHome = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
 
+    if (entry.isIntersecting) {
+    fadeHome.classList.add("transition");
+    return;
+    }
+    });
+},
+);
+observerHome.observe(fadeHome);
 
